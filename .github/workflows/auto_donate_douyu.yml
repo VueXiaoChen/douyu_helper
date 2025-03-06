@@ -6,8 +6,7 @@ on:
       - master
   workflow_dispatch: 
   schedule:
-    - cron: '02 16 * * *'
-    - cron: '02 19 * * *'
+    - cron: '0/60 0/1 * * *'
 
 jobs:
   dy_auto_donate_helper:
@@ -18,7 +17,7 @@ jobs:
       - name: 'Set up Python'
         uses: actions/setup-python@v1
         with:
-          python-version: 3.7
+          python-version: 3.10.16
       - name: 'Install requirements'
         run: pip install -r requirements.txt
       - name: 'Working'
